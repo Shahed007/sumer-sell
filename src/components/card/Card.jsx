@@ -4,6 +4,7 @@ import ButtonPrimary from "../button/ButtonPrimary";
 const Card = ({ popular }) => {
   const { _id, service_provider_name, image, service_name, services } =
     popular || [];
+
   return (
     <div className="rounded-md shadow-md dark:bg-gray-900 backdrop-blur-md bg-text_color_dark/20 dark:text-text_color_dark">
       <img
