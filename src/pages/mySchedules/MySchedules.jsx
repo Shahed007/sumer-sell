@@ -66,14 +66,6 @@ const MySchedules = () => {
       email: user?.email,
       rating: getRating,
     };
-
-    const res = await axios.put("http://localhost:5000/api/v1/rating", {
-      ...rating,
-    });
-
-    if (res.status === 200) {
-      setSuccess(true);
-    }
   };
 
   return (
