@@ -1,12 +1,14 @@
 import { useState } from "react";
 
+import PropTypes from "prop-types";
+
 const Accordion = ({ title, description }) => {
   const [show, setShow] = useState(false);
   return (
     <div>
       <div
         onClick={() => setShow(!show)}
-        className={`shadow-sm border  p-2 rounded-md text-base font-semibold flex items-center gap-2 justify-between ${
+        className={`shadow-sm border  p-2 rounded-md text-sm sm:text-base font-semibold flex items-center gap-2 justify-between ${
           show && "rounded-b-none"
         }`}
         style={{ cursor: "pointer" }}
@@ -52,6 +54,11 @@ const Accordion = ({ title, description }) => {
       </p>
     </div>
   );
+};
+
+Accordion.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default Accordion;

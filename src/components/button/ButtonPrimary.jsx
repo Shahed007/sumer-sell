@@ -1,19 +1,20 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
-const ButtonPrimary = ({ link, className, children }) => {
+const ButtonPrimary = ({ className, children, type, disabled }) => {
   return (
-    <Link
-      to={link}
-      className={`${className} px-[32px] py-[10px] rounded bg-secondary_color/60 dark:text-text_color_dark text-text_color_normal font-semibold text-lg border-transparent border-[2px] duration-200 hover:border-secondary_color dark:hover:text-secondary_color hover:text-secondary_color hover:bg-transparent active:scale-95 shadow-drop-center`}
+    <button
+      type={type}
+      disabled={disabled}
+      className={`${className} disabled:bg-base-300 disabled:hover:border-transparent  disabled:hover:text-neutral disabled:scale-100 disabled:cursor-not-allowed px-[32px] py-[10px] rounded bg-secondary_color/60 dark:text-text_color_dark text-text_color_normal font-semibold text-lg border-transparent border-[2px] duration-200 hover:border-secondary_color dark:hover:text-secondary_color hover:text-secondary_color hover:bg-transparent active:scale-95 shadow-drop-center`}
     >
       {children}
-    </Link>
+    </button>
   );
 };
 
 ButtonPrimary.propTypes = {
-  link: PropTypes.string,
+  disabled: PropTypes.bool,
+  type: PropTypes.string,
   text: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node,

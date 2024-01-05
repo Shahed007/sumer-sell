@@ -13,7 +13,7 @@ const Faq = () => {
           <Title>FAQ</Title>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div className="mt-12 grid grid-cols-1  gap-7">
           <div className="flex flex-col gap-2">
             {data?.map((item) => (
               <Accordion key={item.id} {...item}></Accordion>
