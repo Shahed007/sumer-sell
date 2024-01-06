@@ -8,7 +8,7 @@ const Accordion = ({ title, description }) => {
     <div>
       <div
         onClick={() => setShow(!show)}
-        className={`shadow-sm border  p-2 rounded-md text-sm sm:text-base font-semibold flex items-center gap-2 justify-between ${
+        className={`shadow-sm border dark:bg-dark_component dark:text-white  p-2 rounded-md text-sm sm:text-base font-semibold flex items-center gap-2 justify-between ${
           show && "rounded-b-none"
         }`}
         style={{ cursor: "pointer" }}
@@ -48,7 +48,7 @@ const Accordion = ({ title, description }) => {
           opacity: show ? 1 : 0,
           display: show ? "block" : "none",
         }}
-        className={` p-2 text-base font-normal border-t shadow-sm transition-all duration-200 `}
+        className={` p-2 text-base font-normal border-t shadow-sm transition-all duration-200 dark:bg-dark_component dark:text-white`}
       >
         {description}
       </p>

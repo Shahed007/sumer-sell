@@ -35,7 +35,7 @@ const About = () => {
             />
           </div>
           <div className="flex-1 shadow-drop-center p-6 rounded-md space-y-6 dark:bg-gray-800">
-            <p className="text-justify text-base text-text_color_normal dark:text-text_color_dark">
+            <p className="text-justify text-base text-text_color_normal dark:text-text_color_dark sm:block hidden ">
               At HomeCareHub, we&apos;re committed to transforming the way you
               experience home services. We understand that finding reliable,
               skilled, and trustworthy professionals for your home can be a
@@ -44,6 +44,12 @@ const About = () => {
               industry.
             </p>
             <p className="text-justify text-base text-text_color_normal dark:text-text_color_dark">
+              At HomeCareHub, we&apos;re committed to transforming the way you
+              experience home services. We understand that finding reliable,
+              skilled, and trustworthy professionals for your home can be a
+              challenge.
+            </p>
+            <p className="text-justify text-base text-text_color_normal dark:text-text_color_dark sm:block hidden">
               Our mission is to simplify your life and elevate your home service
               experience. We believe that everyone deserves a safe, comfortable,
               and well-maintained home, and we&apos;re here to make that a

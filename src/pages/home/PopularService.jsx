@@ -26,7 +26,7 @@ const PopularService = () => {
     <section className="mt-32">
       <Container>
         <div className="flex justify-center mb-14">
-          <Title className="pb-2">Our popular services</Title>
+          <Title className="pb-2 ">Our popular services</Title>
         </div>
 
         <div className="grid md:grid-cols-2 grid-cols-1 gap-6">

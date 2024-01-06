@@ -7,9 +7,9 @@ import Accordion from "../../components/accordion/Accordion";
 const Faq = () => {
   const [data] = useState(accordion);
   return (
-    <section className="my-20">
+    <section className="my-20 ">
       <Container>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center ">
           <Title>FAQ</Title>
         </div>
 
