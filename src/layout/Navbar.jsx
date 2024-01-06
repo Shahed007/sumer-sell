@@ -291,7 +291,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-col  items-center mx-3">
-          <ul className="w-full flex mb-5 flex-col gap-5 text-lg font-medium divide-y divide-gray-400">
+          <ul className="w-full flex mb-5 flex-col gap-5 text-2xl font-medium divide-y divide-gray-400">
             {Mobilelinks}
             <li className="w-full">
               <button

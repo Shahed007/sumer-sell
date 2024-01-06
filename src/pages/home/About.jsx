@@ -5,9 +5,9 @@ import ButtonPrimary from "../../components/button/ButtonPrimary";
 
 const About = () => {
   return (
-    <section className="mt-32">
+    <section className="mt-20">
       <Container>
-        <div className="flex justify-center items-center mb-14">
+        <div className="flex justify-center items-center mb-12">
           <Title className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -26,15 +26,15 @@ const About = () => {
             About Us
           </Title>
         </div>
-        <div className="flex md:flex-row flex-col items-center gap-6">
-          <div className="md:w-2/6">
+        <div className="flex lg:flex-row flex-col  gap-6">
+          <div className="flex-1 h-full border shadow-sm rounded-sm">
             <img
-              className="h-full w-full rounded"
+              className="h-full w-full rounded "
               src={aboutImage}
               alt="About us image"
             />
           </div>
-          <div className="flex-1 shadow-drop-center p-6 rounded-md space-y-6 dark:bg-gray-800">
+          <div className="flex-1 shadow-drop-center p-6 rounded-md space-y-4 dark:bg-gray-800">
             <p className="text-justify text-base text-text_color_normal dark:text-text_color_dark sm:block hidden ">
               At HomeCareHub, we&apos;re committed to transforming the way you
               experience home services. We understand that finding reliable,

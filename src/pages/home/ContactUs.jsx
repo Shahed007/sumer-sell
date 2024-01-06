@@ -103,18 +103,22 @@ const ContactUs = () => {
               </ButtonPrimary>
             </div>
           </form>
-          <div className="bg-primary_color col-span-2 py-4 px-4 sm:px-8 flex flex-col justify-center gap-6 md:mt-0 mt-6 md:shadow-none shadow-sm md:border-none border md:rounded-none rounded-sm">
-            <div className="flex items-center gap-2 sm:flex-row flex-col">
+          <div className="bg-gradient-to-tr from-primary_color to-secondary_color rounded-md md:rounded-l-none md:rounded-t-none md:rounded-b-none col-span-2 py-4 px-3 lg:px-8 flex flex-col justify-center gap-6 md:mt-0 mt-6 md:shadow-none shadow-sm md:border-none border ">
+            <div className="flex items-center gap-2  lg:flex-row flex-col">
               <BsFillTelephoneFill className=" sm:text-2xl text-xl" />
               <h4 className="font-bold sm:text-lg text-base">+880183970327</h4>
             </div>
-            <div className="flex items-center gap-2 sm:flex-row flex-col">
+            <div className="flex items-center gap-2 lg:flex-row flex-col">
               <MdEmail className="sm:text-2xl text-xl " />
-              <h4 className="sm:text-lg text-base font-bold">mdshahed.contacts@gmail.com</h4>
+              <h4 className="sm:text-lg text-base font-bold">
+                mdshahed.contacts@gmail.com
+              </h4>
             </div>
-            <div className="flex items-center gap-2 sm:flex-row flex-col">
+            <div className="flex items-center gap-2 lg:flex-row flex-col">
               <FaMapLocationDot className="sm:text-2xl text-xl" />
-              <h4 className="sm:text-lg text-base font-bold">Gazipur, Dahaka, Bangladesh</h4>
+              <h4 className="sm:text-lg text-base font-bold">
+                Gazipur, Dahaka, Bangladesh
+              </h4>
             </div>
           </div>
         </div>
