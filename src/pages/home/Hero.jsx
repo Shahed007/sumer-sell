@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="h-full w-full absolute z-10 top-0 left-0 bg-text_color_normal/30 "></div>
       <Container>
         <div className="relative  z-20 h-full flex md:flex-row  justify-center lg:justify-between items-center">
-          <div className="lg:w-4/5 lg:text-start text-center space-y-7 text-text_color_dark">
+          <div className="lg:w-4/5 lg:text-start text-center space-y-7 text-text_color_dark" data-aos="fade-right">
             <h1 className="md:text-[45px] text-2xl sm:text-3xl font-bold text-secondary_color">
               <Typewriter
                 words={["Welcome to Your", "Home Service Solution"]}
@@ -33,7 +33,7 @@ const Hero = () => {
             </p>
             <ButtonPrimary className="inline-block">Get Started</ButtonPrimary>
           </div>
-          <div className="lg:w-3/12 flex-1 h-full hidden lg:flex justify-end items-end">
+          <div className="lg:w-3/12 flex-1 h-full hidden lg:flex justify-end items-end" data-aos="fade-left">
             <img
               className="lg:h-72 lg:w-72 object-cover"
               src={plumber}

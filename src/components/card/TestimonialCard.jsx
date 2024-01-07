@@ -36,7 +36,7 @@ export default TestimonialCard;
 TestimonialCard.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,
-  rating: PropTypes.string,
+  rating: PropTypes.number,
   description: PropTypes.string,
   days: PropTypes.string,
 };

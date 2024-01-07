@@ -16,7 +16,7 @@ const Review = () => {
       <div className="flex justify-center mb-14">
         <Title>Testimonial</Title>
       </div>
-      <Container>
+      <Container data-aos="zoom-in">
         <Swiper
           navigation={{
             nextEl: ".swiper-button-next",

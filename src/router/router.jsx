@@ -11,6 +11,7 @@ import AddServices from "../pages/addServices/AddServices";
 import MySchedules from "../pages/mySchedules/mySchedules";
 import MyServices from "../pages/myServices/MyServices";
 import ErrorPage from "../pages/errorPage/ErrorPage";
+import AboutUs from "../pages/aboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/mySchedules",
         element: <MySchedules></MySchedules>,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/my",

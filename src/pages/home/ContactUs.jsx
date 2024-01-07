@@ -50,7 +50,7 @@ const ContactUs = () => {
           <Title>Contact Us</Title>
         </div>
 
-        <div className="md:max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 ">
+        <div className="md:max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 " data-aos="zoom-in">
           <form
             onSubmit={sendEmail}
             ref={form}

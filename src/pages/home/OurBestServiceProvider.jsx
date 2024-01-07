@@ -16,7 +16,7 @@ const OurBestServiceProvider = () => {
           <Title>Our Best Service Provider</Title>
         </div>
       </Container>
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12" data-aos="fade-up" data-aos-duration="5000">
         <div className="sm:h-72 h-48 md:col-span-3 col-span-6">
           <GalleryItem img={img1} name="Alexander"></GalleryItem>
         </div>
@@ -27,7 +27,7 @@ const OurBestServiceProvider = () => {
           <GalleryItem img={img3} name="Christopher"></GalleryItem>
         </div>
       </div>
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12" data-aos="fade-up" data-aos-duration="5000">
         <div className="sm:h-72 h-48 md:col-span-3 col-span-6">
           <GalleryItem img={img4} name="Emily"></GalleryItem>
         </div>

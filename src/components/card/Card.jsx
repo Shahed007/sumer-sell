@@ -7,7 +7,7 @@ const Card = ({ popular }) => {
     popular || [];
 
   return (
-    <div className="rounded-md shadow-md relative dark:bg-gray-900 backdrop-blur-md bg-text_color_dark/20 dark:text-text_color_dark">
+    <div data-aos="fade-up" data-aos-duration="5000" className="rounded-md shadow-md relative dark:bg-gray-900 backdrop-blur-md bg-text_color_dark/20 dark:text-text_color_dark">
       <img
         src={services.service_image}
         alt={`photo of ${service_provider_name}`}

@@ -5,6 +5,9 @@ import { RouterProvider } from "react-router-dom";
 import router from "./router/router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AuthProvider from "./context/AuthProvider";
+import Aos from "aos";
+Aos.init();
+import "aos/dist/aos.css";
 
 const queryClient = new QueryClient();
 

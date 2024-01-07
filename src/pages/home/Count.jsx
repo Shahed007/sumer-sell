@@ -8,14 +8,14 @@ const Count = () => {
     <section className="mt-20 bg-gradient-to-l from-secondary_color/80 to-secondary_color py-4">
       <Container>
         <div className="flex flex-wrap justify-center gap-8">
-          <div className="flex flex-col  justify-center items-center">
+          <div className="flex flex-col  justify-center items-center" data-aos="fade-right">
             <FaPeopleGroup className="lg:text-6xl text-4xl text-white mb-3" />
             <div className="lg:text-4xl text-3xl font-bold text-white flex items-center gap-2">
               <CountUp start={0} end={40000} duration={10}></CountUp> +
             </div>
             <h4 className="text-white font-medium lg:text-3xl text-2xl">Happy Client</h4>
           </div>
-          <div className="flex flex-col  justify-center items-center">
+          <div className="flex flex-col  justify-center items-center" data-aos="zoom-in">
             <MdDesignServices className="lg:text-6xl text-4xl text-white mb-3" />
             <div className="lg:text-4xl text-3xl font-bold text-white flex items-center gap-2">
               <CountUp start={0} end={10000} duration={10}></CountUp> +
@@ -24,7 +24,7 @@ const Count = () => {
               Service Provider
             </h4>
           </div>
-          <div className="flex flex-col  justify-center items-center">
+          <div className="flex flex-col  justify-center items-center" data-aos="fade-left">
             <MdOutlinePendingActions className="lg:text-6xl text-4xl text-white mb-3" />
             <div className="lg:text-4xl text-3xl font-bold text-white flex items-center gap-2">
               <CountUp start={0} end={5000} duration={10}></CountUp> +

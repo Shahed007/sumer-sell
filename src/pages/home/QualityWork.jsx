@@ -4,7 +4,7 @@ import Quality from "../../assets/image/quality-work.webp";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { FaRegCalendarCheck, FaShieldAlt } from "react-icons/fa";
 import { AiFillLike } from "react-icons/ai";
-import {MdOutlinePayment} from "react-icons/md"
+import { MdOutlinePayment } from "react-icons/md";
 
 const QualityWork = () => {
   return (
@@ -26,7 +26,10 @@ const QualityWork = () => {
             </Title>
           </div>
 
-          <div className="max-w-2xl mx-auto bg-primary_color/50 backdrop-blur-md p-2 sm:p-4 rounded-md border shadow-sm">
+          <div
+            className="max-w-2xl mx-auto bg-primary_color/50 backdrop-blur-md p-2 sm:p-4 rounded-md border shadow-sm"
+            data-aos="zoom-in"
+          >
             <h3 className="text-xl font-bold text-gray-800 mb-5 sm:text-start text-center">
               Why Choose Us
             </h3>
@@ -69,11 +72,11 @@ const QualityWork = () => {
               </div>
               <div className="flex items-center gap-3 sm:flex-row flex-col">
                 <p className="text-4xl text-purple-500">
-                <MdOutlinePayment />
+                  <MdOutlinePayment />
                 </p>
 
                 <h4 className="sm:text-lg text-base font-medium text-black  sm:text-start text-center">
-                Ensures Cost-effectiveness
+                  Ensures Cost-effectiveness
                 </h4>
               </div>
             </div>

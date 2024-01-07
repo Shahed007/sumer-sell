@@ -12,6 +12,15 @@ input[type="number"] {
   -moz-appearance: textfield !important;
 }
 
+body[data-aos-duration="4000"] [data-aos],
+[data-aos][data-aos][data-aos-duration="4000"] {
+  transition-duration: 8000ms;
+}
+
+.marvel-device.iphone-x {
+  height: 500px !important;
+  width: 100% !important;
+}
 /* Animation */
 .shadow-drop-center {
   -webkit-animation: shadow-drop-center 0.4s
@@ -23,6 +32,13 @@ input[type="number"] {
   -webkit-animation: shadow-inset-center 0.4s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: shadow-inset-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@media screen and (min-width: 576px) {
+  .marvel-device.iphone-x {
+    height: 500px !important;
+    width: 320px !important;
+  }
 }
 
 /* Loading Animation */
@@ -56,8 +72,6 @@ input[type="number"] {
     transform: rotate(360deg);
   }
 }
-
-
 
 /**
  * ----------------------------------------
