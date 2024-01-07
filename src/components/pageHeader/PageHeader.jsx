@@ -12,10 +12,10 @@ const PageHeader = ({ children }) => {
       className="flex justify-center items-center h-48"
     >
       <div className="flex flex-col gap-3 items-center dark:text-text_color_dark">
-        <h1 className="text-2xl font-semibold">{children}</h1>
+        <h1 className="sm:text-2xl text-xl text-center font-semibold">{children}</h1>
         <Link
           to="/"
-          className="flex gap-1 items-center text-lg font-medium hover:text-primary_color duration-150"
+          className="flex gap-1 items-center text-base   font-medium hover:text-primary_color duration-150"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -52,6 +52,18 @@ const Navbar = () => {
           Services
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/feedBack"
+          className={({ isActive }) =>
+            isActive
+              ? `after:bg-secondary_color after:h-[4px] after:w-full after:inline-block flex flex-col after:scale-100 after:duration-300 `
+              : `hover:after:scale-100 after:bg-secondary_color after:h-[4px] after:w-full after:inline-block flex flex-col after:scale-0 after:duration-300`
+          }
+        >
+          <span>FeedBack</span>
+        </NavLink>
+      </li>
     </>
   );
   // MOBILE LINKS

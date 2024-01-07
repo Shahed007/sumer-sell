@@ -12,6 +12,7 @@ import MySchedules from "../pages/mySchedules/mySchedules";
 import MyServices from "../pages/myServices/MyServices";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 import AboutUs from "../pages/aboutUs/AboutUs";
+import FeedBack from "../pages/feedBack/FeedBack";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/feedBack",
+        element: <FeedBack></FeedBack>,
       },
       {
         path: "/my",
