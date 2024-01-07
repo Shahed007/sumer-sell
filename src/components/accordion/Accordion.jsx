@@ -1,27 +1,34 @@
 import { useState } from "react";
-
 import PropTypes from "prop-types";
 
-const Accordion = ({ title, description }) => {
-  const [show, setShow] = useState(false);
+const Accordion = ({ title, description, id }) => {
+  const [activeAccordion, setActiveAccordion] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setActiveAccordion(activeAccordion === index ? null : index);
+  };
   return (
-    <div>
-      <div
-        onClick={() => setShow(!show)}
-        className={`shadow-sm border dark:bg-dark_component dark:text-white  p-2 rounded-md text-sm sm:text-base font-semibold flex items-center gap-2 justify-between ${
-          show && "rounded-b-none"
-        }`}
-        style={{ cursor: "pointer" }}
+    <div className="mb-4">
+      <input
+        type="checkbox"
+        id={`accordion-item-${id}`}
+        className="hidden"
+        checked={activeAccordion === id}
+        onChange={() => toggleAccordion(id)}
+      />
+      <label
+        htmlFor={`accordion-item-${id}`}
+        className="cursor-pointer text-sm sm:text-base font-bold bg-white border shadow-sm rounded-md p-2 flex transition duration-300 justify-between items-center "
       >
-        <h1>{title}</h1>
-        {show ? (
+        {title}
+        {activeAccordion === id ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 "
+            className="w-6 h-6"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
           </svg>
@@ -32,7 +39,7 @@ const Accordion = ({ title, description }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 "
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
@@ -41,22 +48,20 @@ const Accordion = ({ title, description }) => {
             />
           </svg>
         )}
-      </div>
-      <p
-        style={{
-          maxHeight: show ? "100%" : "0px",
-          opacity: show ? 1 : 0,
-          display: show ? "block" : "none",
-        }}
-        className={` p-2 text-base font-normal border-t shadow-sm transition-all duration-200 dark:bg-dark_component dark:text-white`}
+      </label>
+      <div
+        className={`overflow-hidden max-h-0 transition-all duration-700 shadow-sm border rounded-b-sm ${
+          activeAccordion === id ? "max-h-screen" : ""
+        }`}
       >
-        {description}
-      </p>
+        <div className="p-4 text-justify">{description}</div>
+      </div>
     </div>
   );
 };
 
 Accordion.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string,
   description: PropTypes.string,
 };

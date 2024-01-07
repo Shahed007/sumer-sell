@@ -5,6 +5,7 @@ import useAxios from "../../hooks/useAxios";
 import Card from "../../components/card/Card";
 import ButtonPrimary from "../../components/button/ButtonPrimary";
 import Animation from "../../components/animation/Animation";
+import { Link } from "react-router-dom";
 
 const PopularService = () => {
   const axios = useAxios();
@@ -36,7 +37,9 @@ const PopularService = () => {
         </div>
 
         <div className="text-center mt-12">
-          <ButtonPrimary link="/services">Show All</ButtonPrimary>
+          <Link to="/services">
+            <ButtonPrimary>Show All</ButtonPrimary>
+          </Link>
         </div>
       </Container>
     </section>

@@ -24,13 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/serviceDetails/:id",
-        element: (
-          <PrivateRoute>
-            <ServicesDetails></ServicesDetails>
-          </PrivateRoute>
-        ),
+        element: <ServicesDetails></ServicesDetails>,
         loader: ({ params }) =>
-          axios.get(`https://home-cearr-hub-server-v1.vercel.app/api/v1/services/${params.id}`),
+          axios.get(
+            `https://home-cearr-hub-server-v1.vercel.app/api/v1/services/${params.id}`
+          ),
       },
       {
         path: "/services",
@@ -46,11 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/mySchedules",
-        element: (
-          <PrivateRoute>
-            <MySchedules></MySchedules>
-          </PrivateRoute>
-        ),
+        element: <MySchedules></MySchedules>,
       },
       {
         path: "/my",

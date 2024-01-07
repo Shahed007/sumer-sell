@@ -1,111 +1,87 @@
 import Container from "../../../components/Container";
 import Title from "../../../components/title/Title";
-import { AiFillStar } from "react-icons/ai";
+import { testimonial } from "../../../../util/api";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { FreeMode, Pagination, Navigation, Autoplay } from "swiper/modules";
+import { useState } from "react";
+import TestimonialCard from "../../../components/card/TestimonialCard";
 
 const Review = () => {
+  const [data] = useState(testimonial);
+
   return (
-    <section className="my-32">
+    <section className="mt-20 relative">
       <div className="flex justify-center mb-14">
         <Title>Testimonial</Title>
       </div>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="container shadow-drop-center flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
-            <div className="flex justify-between p-4">
-              <div className="flex space-x-4">
-                <div>
-                  <img
-                    src="https://randomuser.me/api/portraits/women/65.jpg"
-                    alt=""
-                    className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-bold">Review by Jane D</h4>
-                  <span className="text-xs dark:text-gray-400">2 days ago</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2 text-yellow-500">
-                <AiFillStar />
-                <span className="text-xl font-bold">4.5</span>
-              </div>
-            </div>
-            <div className="p-4  text-sm text-justify dark:text-text_color_dark">
-              <p>
-                I recently used HomeCareHub to find a plumber, and the
-                experience was fantastic! The platform was user-friendly, and I
-                quickly found a reliable plumber to fix my leaking faucet. The
-                service was top-notch, and the plumber arrived on time.
-                I&apos;ll definitely use HomeCareHub for my future home service
-                needs.
-              </p>
-            </div>
+        <Swiper
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          slidesPerView={1}
+          spaceBetween={10}
+          freeMode={true}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          }}
+          modules={[FreeMode, Pagination, Navigation, Autoplay]}
+        >
+          <div className="mx-10">
+            {data?.map((item) => (
+              <SwiperSlide key={item.id} className="my-10 ">
+                <TestimonialCard {...item}></TestimonialCard>
+              </SwiperSlide>
+            ))}
           </div>
-          <div className="container shadow-drop-center flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
-            <div className="flex justify-between p-4">
-              <div className="flex space-x-4">
-                <div>
-                  <img
-                    src="https://randomuser.me/api/portraits/men/31.jpg"
-                    alt=""
-                    className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-bold">Review by John S.</h4>
-                  <span className="text-xs dark:text-gray-400">4 days ago</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2 text-yellow-500">
-                <AiFillStar />
-                <span className="text-xl font-bold">4.5</span>
-              </div>
-            </div>
-            <div className="p-4 text-justify text-sm dark:text-text_color_dark">
-              <p>
-                HomeCareHub made it incredibly easy to find a local cleaning
-                service for my home. The reviews from other users helped me
-                choose the right cleaning crew. They did an excellent job, and
-                my house has never looked better. The only reason I didn&apos;t
-                give a perfect score is that I&apos;d love to see even more
-                service options on the platform. Great work, HomeCareHub team!
-              </p>
-            </div>
-          </div>
-          <div className="container shadow-drop-center flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
-            <div className="flex justify-between p-4">
-              <div className="flex space-x-4">
-                <div>
-                  <img
-                    src="https://randomuser.me/api/portraits/women/56.jpg"
-                    alt=""
-                    className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-bold">Review by Sarah M.</h4>
-                  <span className="text-xs dark:text-gray-400">2 days ago</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-2 text-yellow-500">
-                <AiFillStar />
-                <span className="text-xl font-bold">4.5</span>
-              </div>
-            </div>
-            <div className="p-4 text-justify  text-sm dark:text-text_color_dark">
-              <p>
-                I was skeptical about using an online platform for home
-                services, but HomeCareHub exceeded my expectations. I hired an
-                electrician to fix some wiring issues, and I&apos;m impressed.
-                The platform is convenient, and the electrician they connected
-                me with was skilled and professional. I&apos;m giving it 4.5
-                stars because there&apos;s always room for improvement, but
-                I&apos;ll definitely use HomeCareHub again.
-              </p>
-            </div>
-          </div>
-        </div>
+        </Swiper>
       </Container>
+      <button className="swiper-button-prev hidden duration-200 transition-all border-2 border-transparent hover:border-secondary_color hover:bg-transparent active:scale-95 z-50 hover:text-secondary_color cursor-pointer absolute top-1/2 left-5 h-10 w-10 md:flex justify-center items-center text-white bg-secondary_color rounded-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+      <button className="swiper-button-next duration-200 transition-all border-2 border-transparent hover:border-secondary_color hover:bg-transparent active:scale-95 z-50 hover:text-secondary_color cursor-pointer absolute top-1/2 right-5 h-10 w-10 hidden md:flex justify-center items-center  bg-secondary_color rounded-full shadow-sm text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
     </section>
   );
 };

@@ -26,7 +26,7 @@ const ServicesDetails = () => {
   } = data.data || {};
   const { price, rating, description, features, service_image } =
     services || {};
-
+  console.log(email);
   const {
     isLoading,
 
@@ -243,7 +243,7 @@ const ServicesDetails = () => {
                         type="text"
                         name="user_email"
                         placeholder="Type here"
-                        defaultValue={user.email}
+                        defaultValue={user?.email}
                         readOnly
                         className="input input-bordered w-full "
                       />
@@ -293,7 +293,7 @@ const ServicesDetails = () => {
                     </div>
                     <button
                       type="submit"
-                      className="btn btn-block bg-secondary_color"
+                      className="btn btn-block bg-secondary_color shadow-sm border-secondary_color"
                     >
                       Purchase this Service
                     </button>
