@@ -7,21 +7,14 @@ import Container from "../../components/Container";
 import Title from "../../components/title/Title";
 import MyPending from "./MyPending";
 import { useEffect, useState } from "react";
-import ReactStars from "react-rating-stars-component";
-import Swal from "sweetalert2";
 
 const MySchedules = () => {
   const { user } = useAuth();
   const axios = useAxios();
   const [getUser, setUser] = useState(false);
-  const [getRating, setRating] = useState(0);
-  const [serviceInfo, setServiceInfo] = useState("");
-  const [success, setSuccess] = useState(false);
-  const ratingChanged = (newRating) => {
-    setRating(newRating);
-  };
 
-  const url = `/cart?user_email=${user.email}`;
+  const url = `/cart?user_email=${user?.email || ""}`;
+
   const { isLoading, data, refetch } = useQuery({
     queryKey: ["cart"],
     enabled: getUser,
@@ -48,25 +41,6 @@ const MySchedules = () => {
         <Animation></Animation>
       </div>
     );
-
-  const openRating = (name) => {
-    setServiceInfo(name);
-    document.getElementById("my_modal_1").showModal();
-  };
-
-  const handleRating = async (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const feedback = form.feedback.value;
-
-    const rating = {
-      serviceInfo,
-      feedback,
-      email: user?.email,
-      rating: getRating,
-    };
-  };
 
   return (
     <>
@@ -114,14 +88,6 @@ const MySchedules = () => {
                         <td>{item.price}</td>
                         <td>{item.date}</td>
                         <td>{item?.status ? item?.status : "Pending"}</td>
-                        <td>
-                          <button
-                            className="btn btn-primary btn-sm"
-                            onClick={() => openRating(item?.service_name)}
-                          >
-                            Give Review
-                          </button>
-                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -133,46 +99,6 @@ const MySchedules = () => {
         </Container>
       </section>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
-
-      <dialog id="my_modal_1" className="modal">
-        <div className="modal-box">
-          <p className={`${success ? "mb-3 text-green-400 block" : "hidden"}`}>
-            Thanks for feedback
-          </p>
-          <h3 className="font-bold text-lg">Rating Us</h3>
-          <form onSubmit={handleRating}>
-            <div className="flex items-center gap-5">
-              <ReactStars
-                count={5}
-                onChange={ratingChanged}
-                size={24}
-                activeColor="#ffd700"
-              />
-              <span>{getRating}</span>
-            </div>
-            <div className="mt-5">
-              <textarea
-                name="feedback"
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="feedback"
-                className="w-full border border-gray-500 p-2"
-              ></textarea>
-            </div>
-
-            <button className="btn btn-primary btn-block mt-5" type="submit">
-              Save
-            </button>
-          </form>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
     </>
   );
 };

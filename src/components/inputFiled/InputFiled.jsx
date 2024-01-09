@@ -1,11 +1,20 @@
 import PropTypes from "prop-types";
-const InputFiled = ({ type, name, placeholder, required }) => {
+const InputFiled = ({
+  type,
+  name,
+  placeholder,
+  required,
+  defaultValue,
+  readOnly,
+}) => {
   return (
     <div className="h-11 relative">
       <input
         required={required}
         type={type}
         name={name}
+        defaultValue={defaultValue}
+        readOnly={readOnly}
         className="peer h-full w-full block border-b darK:bg-dark_component dark:text-white  bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-secondary_color focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 shadow-sm px-2"
         placeholder=" "
       />
@@ -19,9 +28,11 @@ const InputFiled = ({ type, name, placeholder, required }) => {
 InputFiled.propTypes = {
   className: PropTypes.string,
   required: PropTypes.bool,
+  readOnly: PropTypes.bool,
   type: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
+  defaultValue: PropTypes.string,
 };
 
 export default InputFiled;
