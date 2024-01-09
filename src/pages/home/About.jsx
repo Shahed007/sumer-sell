@@ -2,6 +2,7 @@ import Container from "../../components/Container";
 import Title from "../../components/title/Title";
 import aboutImage from "../../assets/image/about-us.jpg";
 import ButtonPrimary from "../../components/button/ButtonPrimary";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -70,7 +71,9 @@ const About = () => {
               destination.
             </p>
 
+            <Link to="/about-us" className="inline-block">
             <ButtonPrimary className="inline-block">Learn more</ButtonPrimary>
+            </Link>
           </div>
         </div>
       </Container>
